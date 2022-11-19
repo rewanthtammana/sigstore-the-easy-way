@@ -2,10 +2,11 @@
 
 Below are the pre-requisite tools required to have this setup up & running.
 
-* [Cosign](https://github.com/sigstore/cosign)
-* [Rekor](https://github.com/sigstore/rekor)
-* [Fulico](https://github.com/sigstore/fulcio)
-* [Syft](https://github.com/anchore/syft)
-* [Trivy](https://github.com/aquasecurity/trivy)
-* [Crane](https://github.com/google/go-containerregistry/blob/main/cmd/crane/doc/crane.md)
-* [JQ](https://github.com/stedolan/jq)
+* [cosign](https://github.com/sigstore/cosign)
+* [rekor](https://github.com/sigstore/rekor)
+* [fulico](https://github.com/sigstore/fulcio)
+* [syft](https://github.com/anchore/syft)
+* [trivy](https://github.com/aquasecurity/trivy)
+* [crane](https://github.com/google/go-containerregistry/blob/main/cmd/crane/doc/crane.md)
+* [jq](https://github.com/stedolan/jq)
+* [jless](https://github.com/PaulJuliusMartinez/jless)

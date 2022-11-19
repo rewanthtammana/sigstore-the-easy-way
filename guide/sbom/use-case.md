@@ -11,13 +11,21 @@ We can write more custom queries depending on the use case. Another use case wou
 
 ## Node image
 
-For this use case, we pick the standard `node` image from dockerhub.
+For this use case, we pick the standard `node` image from dockerhub. We will list only the unique licenses.
 
 ```bash
 trivy i node@sha256:403be0c31e52715b3496f7d5a2b40518402aaa09b82f52aa721ce34564990eed --format spdx-json --security-checks vuln | jq -r '.packages[].licenseDeclared' | sort | uniq
 ```
 
-We can see in the results, below are the list of licenses of different components in the standard `node` image. 
+![sbom-use-case-trivy](../images/sbom-use-case-trivy.png)
+
+Let's see the different kinds of licenses associated with the node docker image dependencies.
+
+```bash
+trivy i node@sha256:403be0c31e52715b3496f7d5a2b40518402aaa09b82f52aa721ce34564990eed --format spdx-json --security-checks vuln | jq -r '.packages[].licenseDeclared' | sort | uniq | wc -l
+```
+
+A whooping count of 131 kind of licenses. Just FYI, listing the licenses of various components from standard `node` image. 
 
 ```
 (WTFPL OR MIT)
