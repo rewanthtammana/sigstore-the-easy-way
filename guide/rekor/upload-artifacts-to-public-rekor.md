@@ -6,7 +6,7 @@ In this example, we will [generate an SBOM](../sbom/generate.md), sign & upload 
 
 ## Sign and upload artifact to rekor
 
-To sign the sbom, we have to generate cryptographic keys. For this example, let's use ed25519 algorithm to generate asymmetric keys.
+To sign the SBOM, we have to generate cryptographic keys. For this example, let's use ed25519 algorithm to generate asymmetric keys.
 
 ```bash
 ssh-keygen -t ed25519 -f id_ed25519
@@ -18,14 +18,18 @@ The above step prompts for passphrase but if you want to pass the value through 
 ssh-keygen -t ed25519 -f id_ed25519 -q -N ""
 ```
 
+![rekor-ssh-keygen-generate-keys](../images/rekor-ssh-keygen-generate-keys.png)
+
 If you already have SBOM, it's okay. If not, follow the steps, [here](../sbom/generate.md) to generate SBOM.
 
-Once we have the artifact, let's sign it with the ed25519 private key generated above.
+Once we have the artifact, let's sign it with the ed25519 private key generated above & upload it to the public transparency log.
 
 ```bash
 ssh-keygen -Y sign -f id_ed25519 -n file image.sbom
 rekor-cli upload --artifact image.sbom --signature image.sbom.sig --public-key id_ed25519.pub --pki-format ssh
 ```
+
+![rekor-upload-sbom-public](../images/rekor-upload-sbom-public.png)
 
 ## Query rekor
 
@@ -36,14 +40,18 @@ There are multiple ways to extract the information from rekor. Whenever an objec
 You can make a curl request to the UUID to gather information of the artifact.
 
 ```bash
-curl https://rekor.sigstore.dev/api/v1/log/entries/24296fb24b8ad77a2181566581dcd340ea4cf3ba041bd28cc560b91e80e73c5280991b4d7440a05f
+curl https://rekor.sigstore.dev/api/v1/log/entries/24296fb24b8ad77a46ab0df865dc1013865d505175bdd56b5f9e61678bc0baed923e461421410c44
 ```
+
+![rekor-query-curl](../images/rekor-query-curl.png)
 
 ### Rekor-cli with UUID
 
 ```bash
-rekor-cli get --uuid 24296fb24b8ad77a2181566581dcd340ea4cf3ba041bd28cc560b91e80e73c5280991b4d7440a05f
+rekor-cli get --uuid 24296fb24b8ad77a46ab0df865dc1013865d505175bdd56b5f9e61678bc0baed923e461421410c44
 ```
+
+![rekor-query-uuid](../images/rekor-query-uuid.png)
 
 ### Rekor-cli with artifact
 
@@ -54,10 +62,16 @@ echo "helloworld" > abcd.txt
 rekor-cli search --artifact abcd.txt
 ```
 
-Instead, if you search with the above generated SBOM object, you will get a result.
+![rekor-query-artifact-not-uploaded](../images/rekor-query-artifact-not-uploaded.png)
+
+Instead, if we perform the search with the previously uploaded SBOM object, we should get a result.
 
 ```bash
 rekor-cli search --artifact image.sbom
 ```
 
-Once you have the UUID, you can use `rekor-cli get` or `curl` to query the endpoint to gather more information.
+![rekor-query-artifact](../images/rekor-query-artifact.png)
+
+We have the UUID now & it can be used with `rekor-cli get` or `curl` to query the endpoint to gather information about the artifact.
+
+There are many other ways to perform search queries. We will discuss more in the [query transparency log section](./query-transparency-log.md).

@@ -2,25 +2,25 @@
 
 In this example, we will attest [SBOMs](../sbom/readme.md). The workflow is similar for attesting signatures/attestations.
 
-## Default steps
+## Set image
+
+We can follow the steps from this [section](./sign-and-verify-with-key.md#set-image), to set image. Just make sure you have $IMAGE set appropriately.
 
 ```bash
-IMAGE=rewanthtammana/aavs
-
-docker tag nginx $IMAGE
-docker push $IMAGE
+echo $IMAGE
 ```
+
+![set-image-variable](../images/set-image-variable.png)
 
 ## Generate SBOM for the image
 
-The [SBOM section](../sbom/generate.md) explains more about SBOMs, etc.
-
-<Screenshot of terminal here>
+[SBOM section](../sbom/generate.md#trivy) decrypts the below command & it's output in great detail. It explains more about SBOMs as well.
 
 ```bash
 trivy i --format cosign-vuln $IMAGE > image.sbom
 ```
 
+![sbom-trivy-cosign-vuln-format](../images/sbom-trivy-cosign-vuln-format.png)
 
 ## Attest and push the sbom to OCI registry
 
@@ -30,23 +30,28 @@ We will attest the generated `image.sbom` as source of truth, sign it with the p
 cosign attest --key cosign.key --predicate image.sbom $IMAGE
 ```
 
-<Screenshot from dockerregistry of att file>
+![cosign-attest-sbom-cli](../images/cosign-attest-sbom-cli.png)
+
+We can see the attested artifact uploaded to the registry. In this case, it's dockerhub.
+
+![cosign-attest-sbom-ui](../images/cosign-attest-sbom-ui.png)
 
 ## Verify the sbom of the image from registry
 
-In future, whenever you want to validate the sbom of the image, you can verify it from the registry.
+In future, whenever we want to validate the sbom of the image, we can verify it with the below command.
 
 ```bash
 cosign verify-attestation --key cosign.pub $IMAGE
 ```
 
+![cosign-verify-attestation](../images/cosign-verify-attestation.png)
+
 ## Extract artifact from the registry
 
-If you want to extract the artifact information for whatever reason, the below command will help to read the information from registry.
+The above command verifies & returns the uploaded artifact data in base64 format. We can decode it to query the artifact (in this case, SBOM file).
 
 ```bash
 cosign verify-attestation --key cosign.pub $IMAGE | jq -r .payload | base64 -D | jq .
 ```
 
-
-<Screenshot from terminal here>
+![cosign-verify-attestation-decode-payload](../images/cosign-verify-attestation-decode-payload.png)

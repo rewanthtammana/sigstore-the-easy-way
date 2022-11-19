@@ -24,4 +24,20 @@ The `cosign-vuln` format is a custom type created by trivy to store SBOM data al
 trivy i --format cosign-vuln $IMAGE > image.sbom
 ```
 
-<Screenshot of terminal here>
+![sbom-trivy-cosign-vuln-format](../images/sbom-trivy-cosign-vuln-format.png)
+
+We can query the above generated SBOM to extract information like list of CVEs, dependencies, etc.
+
+```bash
+cat image.sbom | jq -r '.scanner.result.Results[].Vulnerabilities[].VulnerabilityID' | wc -l
+```
+
+![sbom-trivy-cve-count](../images/sbom-trivy-cve-count.png)
+
+As you can see above, there are 141 CVEs in your image (i.e nginx image as we re-tagged it). Let's list the first 30 CVEs from the list.
+
+```bash
+cat image.sbom | jq -r '.scanner.result.Results[].Vulnerabilities[].VulnerabilityID' | head -n 30
+```
+
+![sbom-trivy-query-cve](../images/sbom-trivy-query-cve.png)

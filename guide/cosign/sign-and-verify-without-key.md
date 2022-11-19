@@ -4,21 +4,27 @@ In the previous section, we have generated a key pair, it's stored on file syste
 
 ## Set image
 
+We can follow the steps from this [section](./sign-and-verify-with-key.md#set-image), to set image. Just make sure you have $IMAGE set appropriately.
+
 ```bash
-IMAGE=rewanthtammana/aava
-docker pull nginx
-docker tag nginx $IMAGE
+echo $IMAGE
 ```
+
+![set-image-variable](../images/set-image-variable.png)
 
 ## Sign the artifact
 
-This stage redirects you to a page to sign-in with your OIDC provider like Google, Github & Microsoft to login & sign the artifact. You can have your own OIDC configured but to keep things simple as possible, let's skip that.
+Keyless signing redirects to OIDC provider login page like Google, Github & Microsoft to sign the artifact. We can have our own OIDC configured but to keep things simple, let's skip that.
 
 ```bash
 COSIGN_EXPERIMENTAL=1 cosign sign $IMAGE
 ```
 
-In the output, we can see the `tlog entry created with index: 7398058`. The index differs on every upload. We can visit [compare the signatures](../rekor/compare-the-signatures-uploaded-to-transparency-log-and-registry.md) section to read on how to query the tlog index & more.
+![cosign-keyless-signing-oidc-login](../images/cosign-keyless-signing-oidc-login.png)
+
+![cosign-keyless-signing-cli-sign](../images/cosign-keyless-signing-cli-sign.png)
+
+In the output, we can see the `tlog entry created with index: 7403797`. The index differs on every upload. We can visit [compare the signatures uploaded to transparency log and registry section](../rekor/compare-the-signatures-uploaded-to-transparency-log-and-registry.md) to read on how to query the transparency log with tlog index for verification & more.
 
 ## Verify the artifact
 
@@ -26,7 +32,9 @@ In the output, we can see the `tlog entry created with index: 7398058`. The inde
 COSIGN_EXPERIMENTAL=1 cosign verify $IMAGE
 ```
 
-The below checks were performed for verification
+![cosign-keyless-signing-cli-verify](../images/cosign-keyless-signing-cli-verify.png)
+
+Observe the list of checks performed above in this method,
 
 ```
 The following checks were performed on each of these signatures:
@@ -35,10 +43,14 @@ The following checks were performed on each of these signatures:
   - Any certificates were verified against the Fulcio roots.
 ```
 
+As you can see above, with this method of signing, there's involvement of [transparency log](../rekor/readme.md) and [fulcio](../fulcio/readme.md). 
+
 ## Inspecting the signature
 
-To identify the the issuer & signed owner, execute the below command
+We can parse the output to write custom queries. For instance, the below command helps to extract the issuer & subject information of the signer,
 
 ```bash
 COSIGN_EXPERIMENTAL=1 cosign verify $IMAGE | jq -r '.[].optional| .Issuer + "-" + .Subject'
 ```
+
+![cosign-keyless-signing-cli-verify-issuer-and-subject](../images/cosign-keyless-signing-cli-verify-issuer-and-subject.png)

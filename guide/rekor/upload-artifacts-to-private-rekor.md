@@ -8,11 +8,13 @@ cd rekor
 docker-compose up
 ```
 
+![rekor-private-docker-compose-start](../images/rekor-private-docker-compose-start.png)
+
 The docker-compose has to start multiple services like redis, mysql, trillan signer, trillian server & rekor server. So, it will take a while to spin up. Be patient. The service exposes port 3000.
 
-To use the local/private rekor instance, `--rekor_server` flag must be passed to the command.
+To use the local/private rekor instance, `--rekor_server` flag must be passed to the cli.
 
-You can follow the previous guide, [upload aartifacts to public rekor](./upload-artifacts-to-public-rekor.md), with an additional parameter to rekor-cli, `--rekor_server http://localhost:3000` for it to work. You can read detailed information on the commands from the [previous section](./upload-artifacts-to-public-rekor.md).
+You can follow the previous guide, [upload artifacts to public rekor](./upload-artifacts-to-public-rekor.md). The only change would be to pass an additional parameter, `--rekor_server http://localhost:3000` to the rekor-cli.
 
 ## Sign and upload artifact to rekor
 
