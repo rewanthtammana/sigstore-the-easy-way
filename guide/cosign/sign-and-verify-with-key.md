@@ -2,7 +2,7 @@
 
 ## Generate key pair
 
-The first step towards signing your software is to generate a key-pair. In the background, cosign uses ECDSA (Elliptic Curve Digital Signature Algorithm) & elliptic.P256 cryptograhy to generate keypair but let's not worry about that & keep things simple.
+The first step towards signing your software is to generate a key-pair. In the background, cosign uses ECDSA (Elliptic Curve Digital Signature Algorithm) & elliptic.P256 cryptography to generate key-pair, but let's not worry about that & keep things simple.
 
 ```bash
 cosign generate-key-pair
@@ -19,7 +19,7 @@ ls -la
 ## Set image
 
 ```bash
-# Replace it the user, image & tag name accordingly
+# Replace the user, image & tag name accordingly
 export IMAGE=rewanthtammana/sigstore-the-easy-way
 ```
 
@@ -33,7 +33,7 @@ docker push $IMAGE
 
 ### Optional
 
-It's recommended to use digest values with image instead of tags like *latest*, *v1*, etc. for signing, verifying, deploying, etc.
+It's recommended to use digest values with an image instead of tags like *latest*, *v1*, etc., for signing, verifying, deploying, etc.
 
 ```bash
 IMAGEDIGEST=$(docker manifest inspect --verbose $IMAGE | jq -r '.Descriptor.digest')

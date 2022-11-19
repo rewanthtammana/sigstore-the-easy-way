@@ -2,7 +2,7 @@
 
 [Rekor](https://github.com/sigstore/rekor) is a transparency log. It's an immutable ledger & is the source of truth for all the signing information.
 
-There are multiple ways to setup this transparency ledger.
+There are multiple ways to set up this transparency ledger.
 
 * [Public rekor](./upload-artifacts-to-public-rekor.md)
 * [Private rekor](./upload-artifacts-to-private-rekor.md)

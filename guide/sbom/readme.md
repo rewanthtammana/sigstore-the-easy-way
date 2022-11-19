@@ -1,6 +1,6 @@
 # SBOM
 
-SBOM refers to Software Bill of Materials. It's the list of components that a software contains. In the below sections, you will see,
+SBOM refers to the Software Bill of Materials. It's the list of components that software contains. In the below sections, you will see,
 
 * [Use case](./use-case.md)
 * [Different formats of SBOMs](./formats.md)

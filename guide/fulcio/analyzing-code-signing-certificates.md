@@ -1,12 +1,12 @@
 # Analyzing code signing certificates
 
-The experimental feature of cosign allows us to use keyless signing feature.
+The experimental feature of cosign allows us to use a keyless signing feature.
 
 Let's extract the output certificate for analysis.
 
 ## Set image
 
-We can follow the steps from this [section](./sign-and-verify-with-key.md#set-image), to set image. Just make sure you have $IMAGE set appropriately.
+We can follow the steps from [this section](./sign-and-verify-with-key.md#set-image) to set the image. Let's ensure the `IMAGE` variable is set.
 
 ```bash
 echo $IMAGE
@@ -35,11 +35,11 @@ step certificate inspect fulcio.crt --format json | jless
 
 ![fulcio-jless-analysis](../images/fulcio-jless-analysis.png)
 
-As we can see above, there are lots of useful information that will help us to identify the signer & issuer of an artifact.
+As we can see above, there are lots of helpful information that will allow us to identify the signer & issuer of an artifact.
 
 ### Extract certificate validity
 
-In the above screenshot, we can see the validity of the certificate as well. Sigstore is generating a short-lived certificate with only 10 minutes validity. The artifact is signed with this short-lived certificate & after 10 minutes the certificate becomes unusable.
+In the above screenshot, we can also see the certificate's validity. Sigstore is generating a short-lived certificate with only 10 minutes of validity. The artifact is signed with this short-lived certificate & after 10 minutes, the certificate becomes unusable.
 
 ```bash
 step certificate inspect fulcio.crt --format json | jq -r '.validity'
@@ -47,9 +47,9 @@ step certificate inspect fulcio.crt --format json | jq -r '.validity'
 
 ![fulcio-certificate-validity](../images/fulcio-certificate-validity.png)
 
-### Identify signer infomration
+### Identify signer information
 
-Analyze the certificate to identify the singer information.
+Analyze the certificate to identify the singer's information.
 
 ```bash
 step certificate inspect fulcio.crt --format json | jq -r '.extensions.subject_alt_name.email_addresses'
@@ -59,20 +59,20 @@ step certificate inspect fulcio.crt --format json | jq -r '.extensions.subject_a
 
 ## Further exploration
 
-The root sigstore certificate signing certificates are usually stored in `~/.sigstore/root` directory. Feel free to explore & inspect the certificates for deeper understanding.
+The root sigstore signing certificates are usually stored in `~/.sigstore/root` directory. Feel free to explore & inspect the files for a deeper understanding.
 
 ```
  ~/.sigstore/root$ tree
 .
 ├── targets
-│   ├── artifact.pub
-│   ├── ctfe.pub
-│   ├── ctfe_2022.pub
-│   ├── fulcio.crt.pem
-│   ├── fulcio_intermediate_v1.crt.pem
-│   ├── fulcio_v1.crt.pem
-│   ├── rekor.0.pub
-│   └── rekor.pub
+│   ├── artifact.pub
+│   ├── ctfe.pub
+│   ├── ctfe_2022.pub
+│   ├── fulcio.crt.pem
+│   ├── fulcio_intermediate_v1.crt.pem
+│   ├── fulcio_v1.crt.pem
+│   ├── rekor.0.pub
+│   └── rekor.pub
 └── tuf.db
     ├── 000004.ldb
     ├── 000033.ldb

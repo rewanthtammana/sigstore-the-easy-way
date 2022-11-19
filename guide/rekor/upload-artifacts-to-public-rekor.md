@@ -2,17 +2,17 @@
 
 Sigstore has a [public rekor instance](https://rekor.sigstore.dev) that is used to upload the artifacts.
 
-In this example, we will [generate an SBOM](../sbom/generate.md), sign & upload it to public rekor instance for transparency & immutability.
+In this example, we will [generate an SBOM](../sbom/generate.md), sign & upload it to the public rekor instance for transparency & immutability.
 
 ## Sign and upload artifact to rekor
 
-To sign the SBOM, we have to generate cryptographic keys. For this example, let's use ed25519 algorithm to generate asymmetric keys.
+To sign the SBOM, we have to generate cryptographic keys. For this example, let's use the ed25519 algorithm to generate asymmetric keys.
 
 ```bash
 ssh-keygen -t ed25519 -f id_ed25519
 ```
 
-The above step prompts for passphrase but if you want to pass the value through CLI, `-N` flag can be used.
+The above step prompts for a passphrase, but if you want to pass the value through CLI, the `-N` flag can be used.
 
 ```bash
 ssh-keygen -t ed25519 -f id_ed25519 -q -N ""
@@ -20,7 +20,7 @@ ssh-keygen -t ed25519 -f id_ed25519 -q -N ""
 
 ![rekor-ssh-keygen-generate-keys](../images/rekor-ssh-keygen-generate-keys.png)
 
-If you already have SBOM, it's okay. If not, follow the steps, [here](../sbom/generate.md) to generate SBOM.
+If you already have SBOM, it's okay. If not, follow the steps [here](../sbom/generate.md) to generate SBOM.
 
 Once we have the artifact, let's sign it with the ed25519 private key generated above & upload it to the public transparency log.
 
@@ -33,11 +33,11 @@ rekor-cli upload --artifact image.sbom --signature image.sbom.sig --public-key i
 
 ## Query rekor
 
-There are multiple ways to extract the information from rekor. Whenever an object is uploaded to rekor instance, an UUID is returned. We can use the UUID to query information.
+There are multiple ways to extract the information from rekor. A UUID is returned whenever an object is uploaded to the rekor instance. We can use the UUID to query data.
 
 ### Curl request
 
-You can make a curl request to the UUID to gather information of the artifact.
+You can make a curl request to the UUID to gather information about the artifact.
 
 ```bash
 curl https://rekor.sigstore.dev/api/v1/log/entries/24296fb24b8ad77a46ab0df865dc1013865d505175bdd56b5f9e61678bc0baed923e461421410c44
@@ -64,7 +64,7 @@ rekor-cli search --artifact abcd.txt
 
 ![rekor-query-artifact-not-uploaded](../images/rekor-query-artifact-not-uploaded.png)
 
-Instead, if we perform the search with the previously uploaded SBOM object, we should get a result.
+Instead, if we search with the previously uploaded SBOM object, we should get a result.
 
 ```bash
 rekor-cli search --artifact image.sbom

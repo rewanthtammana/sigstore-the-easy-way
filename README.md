@@ -2,7 +2,7 @@
 
 The guide is live at [https://rewanthtammana.com/sigstore-the-easy-way](https://rewanthtammana.com/sigstore-the-easy-way)
 
-This book aims to be served as the simplest guide to getting started with sigstore & supply chain security. We reduced the complexity of things to help with an easy start.
+This book aims to be the most straightforward guide to getting started with sigstore & supply chain security.
 
 ## Copyright
 

@@ -1,13 +1,12 @@
 # Use case
 
-Whenever a new concept is introduced, it's common to have a swirling in the head to why you should use it, is it really important, is it worth my time, and so on.
+Whenever a new concept is introduced, it's common to have a swirling in the head as to why you should use it, whether it is essential, whether it is worth your time, and so on.
 
-Say, we are building a nodejs application & downloaded the latest nodejs docker image. As most of us know, nodejs downloads hundreds/thousands of dependencies & sub-dependencies.
+Say we are building a nodejs application & downloaded the latest nodejs docker image. As most of us know, nodejs downloads hundreds/thousands of dependencies & sub-dependencies.
 
-For example, let's say we want to see the different kind of licenses involved with this nodejs project. SBOMs can be of real help to identify this in one-go. Since, SBOMs contain valuable information about application & components, it's safe to make sure they are tamper proof.
+Let's say we want different licenses involved with this nodejs project. SBOMs can be of real help to identify this in one go. Since SBOMs contain valuable information about applications & components, it's safe to ensure they are tamper-proof.
 
-We can write more custom queries depending on the use case. Another use case would be to extract information of dependencies with no license at all. They might be dangerous to use. We can flag or monitor them for malicious updates/supply chain attacks.
-
+We can write more custom queries depending on the use case. Another use case would be extracting information on dependencies with no license. They might be dangerous to use. We can flag or monitor them for malicious updates/supply chain attacks.
 
 ## Node image
 
@@ -19,13 +18,13 @@ trivy i node@sha256:403be0c31e52715b3496f7d5a2b40518402aaa09b82f52aa721ce3456499
 
 ![sbom-use-case-trivy](../images/sbom-use-case-trivy.png)
 
-Let's see the different kinds of licenses associated with the node docker image dependencies.
+Let's see the different licenses associated with the node docker image dependencies.
 
 ```bash
 trivy i node@sha256:403be0c31e52715b3496f7d5a2b40518402aaa09b82f52aa721ce34564990eed --format spdx-json --security-checks vuln | jq -r '.packages[].licenseDeclared' | sort | uniq | wc -l
 ```
 
-A whooping count of 131 kind of licenses. Just FYI, listing the licenses of various components from standard `node` image. 
+A whooping count of 131. Just FYI, listing the licenses of various components from the standard `node` image. 
 
 ```
 (WTFPL OR MIT)

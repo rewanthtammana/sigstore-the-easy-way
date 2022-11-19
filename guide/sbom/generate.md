@@ -1,6 +1,6 @@
 # Generate SBOM
 
-There are multiple tools that help us to generate SBOMs for docker images, OCI artifacts, SIF images, filesystems, etc.
+Multiple tools help us to generate SBOMs for docker images, OCI artifacts, SIF images, filesystems, etc.
 
 ## Docker
 
@@ -32,7 +32,7 @@ trivy i --format cosign-vuln $IMAGE > image.sbom
 
 ![sbom-trivy-cosign-vuln-format](../images/sbom-trivy-cosign-vuln-format.png)
 
-We can query the above generated SBOM to extract information like list of CVEs, dependencies, etc.
+We can query the above-generated SBOM to extract information like a list of CVEs, dependencies, etc.
 
 ```bash
 cat image.sbom | jq -r '.scanner.result.Results[].Vulnerabilities[].VulnerabilityID' | wc -l
@@ -40,7 +40,7 @@ cat image.sbom | jq -r '.scanner.result.Results[].Vulnerabilities[].Vulnerabilit
 
 ![sbom-trivy-cve-count](../images/sbom-trivy-cve-count.png)
 
-As you can see above, there are 141 CVEs in your image (i.e nginx image as we re-tagged it). Let's list the first 30 CVEs from the list.
+As you can see above, there are 141 CVEs in your image (i.e., nginx image as we re-tagged it). Let's list the first 30 CVEs from the list.
 
 ```bash
 cat image.sbom | jq -r '.scanner.result.Results[].Vulnerabilities[].VulnerabilityID' | head -n 30
