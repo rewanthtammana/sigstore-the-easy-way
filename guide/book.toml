@@ -7,3 +7,4 @@ title = "Sigstore The Easy Way"
 
 [output.html]
 default-theme = "navy"
+google-analytics = "UA-198321670-1"
