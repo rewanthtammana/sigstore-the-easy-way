@@ -1,6 +1,6 @@
 # Attach artifacts
 
-In this example, we will attach [SBOMs](../sbom/readme.md) to images. The workflow is similar for attaching signatures/attestations to an artifact.
+In this example, we will attach [SBOMs](../sbom/index.md) to images. The workflow is similar for attaching signatures/attestations to an artifact.
 
 ## Set image
 
