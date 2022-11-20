@@ -1,6 +1,6 @@
 # Attest and verify artifacts
 
-In this example, we will attest [SBOMs](../sbom/readme.md). The workflow is similar for attesting signatures/attestations.
+In this example, we will attest [SBOMs](../sbom/index.md). The workflow is similar for attesting signatures/attestations.
 
 ## Set image
 

@@ -43,7 +43,7 @@ The following checks were performed on each of these signatures:
   - Any certificates were verified against the Fulcio roots.
 ```
 
-As you can see above, with this method of signing, there's the involvement of [transparency log](../rekor/readme.md) and [fulcio](../fulcio/readme.md). 
+As you can see above, with this method of signing, there's the involvement of [transparency log](../rekor/index.md) and [fulcio](../fulcio/index.md). 
 
 ## Inspecting the signature
 

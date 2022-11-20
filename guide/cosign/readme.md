@@ -1,6 +1,6 @@
 # Cosign
 
-[Cosign](https://github.com/sigstore/cosign) is a signing tool. Its responsibility is to sign the artifacts & if required, push them to the OCI registries. If configured, the signature of the artifact is pushed to the [transparency log](../rekor/readme.md).
+[Cosign](https://github.com/sigstore/cosign) is a signing tool. Its responsibility is to sign the artifacts & if required, push them to the OCI registries. If configured, the signature of the artifact is pushed to the [transparency log](../rekor/index.md).
 
 * [Sign and verify with key](./sign-and-verify-with-key.md)
 * [Sign and verify without key](./sign-and-verify-without-key.md)

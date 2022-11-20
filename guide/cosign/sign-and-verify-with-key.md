@@ -69,5 +69,5 @@ The following checks were performed on each of these signatures:
   - The signatures were verified against the specified public key
 ```
 
-There's no involvement of [transparency log](../rekor/readme.md) or [short lived certificates](../fulcio/readme.md) in this method. We will learn about them in the later sections.
+There's no involvement of [transparency log](../rekor/index.md) or [short lived certificates](../fulcio/index.md) in this method. We will learn about them in the later sections.
 
