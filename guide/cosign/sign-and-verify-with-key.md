@@ -31,8 +31,6 @@ docker push $IMAGE
 
 ![cosign-sign-and-verify-with-key-set-image](../images/cosign-sign-and-verify-with-key-set-image.png)
 
-### Optional
-
 It's recommended to use digest values with an image instead of tags like *latest*, *v1*, etc., for signing, verifying, deploying, etc.
 
 ```bash

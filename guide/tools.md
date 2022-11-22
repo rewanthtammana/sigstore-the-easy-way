@@ -1,4 +1,4 @@
-## Tools
+# Tools
 
 Below are the pre-requisite tools required to have this setup up & running.
 
