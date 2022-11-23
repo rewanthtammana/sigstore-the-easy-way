@@ -72,8 +72,8 @@ Cosign only downloads the attestation file associated with the image. If you are
 
 ## Debugging tip
 
-When you try downloading the objects, you might get an error, *MANIFEST_UNKNOWN* or similar. It means the artifact isn't existing in the registry.
+When you try downloading the objects, you might get an error, *MANIFEST_UNKNOWN* or similar. It means the artifact doesn't exist in the registry.
 
-attestation - Uploads `.att` file to the registry
-signature - Uploads `.sig` file to the registry
-sbom - Uploads `.sbom` file to the registry
+* attestation - Uploads `.att` file to the registry
+* signature - Uploads `.sig` file to the registry
+* sbom - Uploads `.sbom` file to the registry
