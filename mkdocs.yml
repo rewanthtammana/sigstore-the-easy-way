@@ -75,7 +75,7 @@ plugins:
 
 nav:
   - Home: index.md
-  - Authors: authors.md
+  - Author: author.md
   - Tools: tools.md
   - Cosign:
     - Cosign: cosign/index.md
