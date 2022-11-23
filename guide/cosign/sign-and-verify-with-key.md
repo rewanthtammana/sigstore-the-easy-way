@@ -18,28 +18,13 @@ ls -la
 
 ## Set image
 
-```bash
-# Replace the user, image & tag name accordingly
-export IMAGE=rewanthtammana/sigstore-the-easy-way
-```
+We can follow the steps from [this section](./set-image.md) to set the image. Let's ensure the `IMAGE` variable is set.
 
 ```bash
-docker pull nginx
-docker tag nginx $IMAGE
-docker push $IMAGE
-```
-
-![cosign-sign-and-verify-with-key-set-image](../images/cosign-sign-and-verify-with-key-set-image.png)
-
-It's recommended to use digest values with an image instead of tags like *latest*, *v1*, etc., for signing, verifying, deploying, etc.
-
-```bash
-IMAGEDIGEST=$(docker manifest inspect --verbose $IMAGE | jq -r '.Descriptor.digest')
-export IMAGE=$IMAGE@$IMAGEDIGEST
 echo $IMAGE
 ```
 
-![set-image-with-digest](../images/set-image-with-digest.png)
+![set-image-variable](../images/set-image-variable.png)
 
 ## Sign the artifact
 

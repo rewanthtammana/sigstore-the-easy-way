@@ -10,7 +10,7 @@ docker pull rewanthtammana/sigstore-the-easy-way:sha256-212dad360f60d13c80c7836d
 
 ## Set image
 
-We can follow the steps from [this section](./sign-and-verify-with-key.md#set-image) to set the image. Let's ensure the `IMAGE` variable is set.
+We can follow the steps from [this section](./set-image.md) to set the image. Let's ensure the `IMAGE` variable is set.
 
 ```bash
 echo $IMAGE

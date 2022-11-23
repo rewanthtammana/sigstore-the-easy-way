@@ -27,7 +27,6 @@ theme:
   name: material
   features:
     - content.code.annotate
-    # - navigation.expand
     - navigation.indexes
     - search.suggest
     - search.highlight
@@ -56,20 +55,6 @@ theme:
   include_search_page: false
   search_index_only: true
 
-# markdown_extensions:
-#   - admonition
-#   - codehilite
-#   - footnotes
-#   - meta
-#   - pymdownx.details
-#   - pymdownx.tabbed
-#   - pymdownx.superfences
-#   - pymdownx.emoji:
-#       emoji_index: !!python/name:materialx.emoji.twemoji
-#       emoji_generator: !!python/name:materialx.emoji.to_svg
-#   - toc:
-#       permalink: true
-
 plugins:
   - git-revision-date-localized:
       type: iso_datetime
@@ -86,6 +71,7 @@ nav:
   - Tools: tools.md
   - Cosign:
     - Cosign: cosign/index.md
+    - Set Image: cosign/set-image.md
     - Sign and verify with key: cosign/sign-and-verify-with-key.md
     - Sign and verify without key: cosign/sign-and-verify-without-key.md
     - Attach artifacts: cosign/attach-artifacts.md

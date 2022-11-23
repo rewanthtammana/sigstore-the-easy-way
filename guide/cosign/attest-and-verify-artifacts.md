@@ -4,7 +4,7 @@ In this example, we will attest [SBOMs](../sbom/index.md). The workflow is simil
 
 ## Set image
 
-We can follow the steps from [this section](./sign-and-verify-with-key.md#set-image) to set the image. Let's ensure the `IMAGE` variable is set.
+We can follow the steps from [this section](./set-image.md) to set the image. Let's ensure the `IMAGE` variable is set.
 
 ```bash
 echo $IMAGE

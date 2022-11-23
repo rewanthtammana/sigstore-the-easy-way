@@ -4,7 +4,7 @@ This is a short handbook on querying rekor (transparency log).
 
 ## Set image
 
-We can follow the steps from [this section](../cosign/sign-and-verify-with-key.md#set-image) to set the image. Let's ensure the `IMAGE` variable is set.
+We can follow the steps from [this section](../cosign/set-image.md) to set the image. Let's ensure the `IMAGE` variable is set.
 
 ```bash
 echo $IMAGE
