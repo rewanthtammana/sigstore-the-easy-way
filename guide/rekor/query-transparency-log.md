@@ -43,9 +43,9 @@ rekor-cli search --email testinguser883@gmail.com
 
 We can use the above UUIDs to gather more information on the signatures/artifacts uploaded to the transparency log.
 
-## Rekor-cli with shasum of artifact
+## Rekor-cli with shasum of hashed rekor object
 
-In the output, you will find the sha256sum of the object. We can even use that sha value to query the transparency log.
+In the output, you will find the sha256sum of the hashed rekor object. We can even use that sha value to query the transparency log.
 
 ```bash
 rekor-cli get --log-index 7403797 --format json | jq -r '.Body.HashedRekordObj.data.hash.value'
