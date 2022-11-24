@@ -28,7 +28,7 @@ trivy i --format cosign-vuln $IMAGE > image.sbom
 It's recommended to keep track of all the known vulnerabilities when committing/pushing an image. We will attach the above-generated SBOM to the image & push it to the registry.
 
 ```bash
-cosign attach --sbom image.sbom $IMAGE
+cosign attach sbom --sbom image.sbom $IMAGE
 ```
 
 ![cosign-attach-sbom](../images/cosign-attach-sbom.png)
