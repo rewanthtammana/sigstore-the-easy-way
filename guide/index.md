@@ -1,10 +1,10 @@
 ## sigstore-the-easy-way
 
-Software signing just got easier. This guide is an easy way to geting started with software signing & securing your software supply chains.
+Software signing just got easier. This guide is an easy way to geting started with software signing & securing software supply chains.
 
 Sigstore is one of the companies in the community that's actively working towards resolving supply chain security issues. The internal working of sigstore components is quite complex, considering the level of protection it provides. In the following sections, we get started with sigstore in the easiest way(s) possible.
 
-As we are trying to mitigate software supply chain security hacks, we often have to leverage other open-source tools to gather more information & secure the services. So, if you need help with non-sigstore toolings in the guide & don't get surprised.
+As we are trying to mitigate software supply chain security hacks, we often have to leverage other open-source tools to gather more information & secure the services. So, if you encounter non-sigstore toolings in the guide & don't get surprised.
 
 ## Outline
 
