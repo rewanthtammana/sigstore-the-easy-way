@@ -8,7 +8,7 @@ As we are trying to mitigate software supply chain security hacks, we often have
 
 ## Outline
 
-- [Authors](authors.md)
+- [Author](author.md)
 - [Tools](tools.md)
 - [Cosign](cosign/index.md)
     - [Sign and verify with key](cosign/sign-and-verify-with-key.md)

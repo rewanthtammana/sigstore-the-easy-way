@@ -1,6 +1,6 @@
-## Tools
+# Tools
 
-Below are the pre-requisite tools required to have this setup up & running.
+Below are the pre-requisite tools we rqeuire throughout this guide.
 
 * [cosign](https://github.com/sigstore/cosign)
 * [rekor](https://github.com/sigstore/rekor)

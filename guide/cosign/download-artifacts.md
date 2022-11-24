@@ -10,7 +10,7 @@ docker pull rewanthtammana/sigstore-the-easy-way:sha256-212dad360f60d13c80c7836d
 
 ## Set image
 
-We can follow the steps from [this section](./sign-and-verify-with-key.md#set-image) to set the image. Let's ensure the `IMAGE` variable is set.
+We can follow the steps from [this section](./set-image.md) to set the image. Let's ensure the `IMAGE` variable is set.
 
 ```bash
 echo $IMAGE
@@ -72,8 +72,8 @@ Cosign only downloads the attestation file associated with the image. If you are
 
 ## Debugging tip
 
-When you try downloading the objects, you might get an error, *MANIFEST_UNKNOWN* or similar. It means the artifact isn't existing in the registry.
+When you try downloading the objects, you might get an error, *MANIFEST_UNKNOWN* or similar. It means the artifact doesn't exist in the registry.
 
-attestation - Uploads `.att` file to the registry
-signature - Uploads `.sig` file to the registry
-sbom - Uploads `.sbom` file to the registry
+* attestation - Uploads `.att` file to the registry
+* signature - Uploads `.sig` file to the registry
+* sbom - Uploads `.sbom` file to the registry

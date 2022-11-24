@@ -1,0 +1,104 @@
+site_name: Sigstore The Easy Way
+site_description: >-
+  Software signing just got easier. Sigstore The Easy Way guide is the most straightforward way to geting started with software signing & securing software supply chains.
+site_author: Rewanth Tammana
+site_url: https://rewanthtammana/sigstore-the-easy-way
+docs_dir: guide
+edit_uri: edit/main/guide
+
+repo_name: rewanthtammana/sigstore-the-easy-way
+repo_url: https://github.com/rewanthtammana/sigstore-the-easy-way
+
+copyright: Copyright &copy; 2022 - Rewanth Tammana
+
+extra_css:
+  - assets/css/style.css
+
+extra:
+  analytics:
+    provider: google
+    # property: UA-198321670-1
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/rewanthtammana/sigstore-the-easy-way
+    - icon: fontawesome/brands/keybase
+      link: https://keybase.io/rewanthtammana
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/rewanthtammana
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/rewanthtammana
+    - icon: fontawesome/brands/github
+      link: https://github.com/rewanthtammana
+
+theme:
+  name: material
+  custom_dir: 'guide/assets/'
+  features:
+    - content.code.annotate
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - search.share
+    - toc.integrate
+    - toc.follow
+  language: en
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: green
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: yellow
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  include_search_page: false
+  search_index_only: true
+
+plugins:
+  - git-revision-date-localized:
+      type: iso_datetime
+      enable_creation_date: true
+  - minify:
+      minify_html: true
+  - search:
+      lang:
+        - en
+
+nav:
+  - Home: index.md
+  - Author: author.md
+  - Tools: tools.md
+  - Cosign:
+    - Cosign: cosign/index.md
+    - Set Image: cosign/set-image.md
+    - Sign and verify with key: cosign/sign-and-verify-with-key.md
+    - Sign and verify without key: cosign/sign-and-verify-without-key.md
+    - Attach artifacts: cosign/attach-artifacts.md
+    - Attest and verify artifacts: cosign/attest-and-verify-artifacts.md
+    - Download artifacts: cosign/download-artifacts.md
+  - Rekor:
+    - Rekor: rekor/index.md
+    - Upload artifacts to public rekor: rekor/upload-artifacts-to-public-rekor.md
+    - Upload artifacts to private rekor: rekor/upload-artifacts-to-private-rekor.md
+    - Query transparency log: rekor/query-transparency-log.md
+    - Compare the signatures uploaded to registry and transparency log: rekor/compare-the-signatures-uploaded-to-transparency-log-and-registry.md
+  - Fulcio:
+    - Fulcio: fulcio/index.md
+    - Analyzing code signing certificates: fulcio/analyzing-code-signing-certificates.md
+  - SBOM:
+    - SBOM: sbom/index.md
+    - Use case: sbom/use-case.md
+    - Formats: sbom/formats.md
+    - Generate: sbom/generate.md
+  # - Gitsign: gitsign/index.md
+  - Contribution: contribution.md
+  - Resources: resources.md

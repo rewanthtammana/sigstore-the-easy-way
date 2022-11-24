@@ -6,7 +6,7 @@ Let's extract the output certificate for analysis.
 
 ## Set image
 
-We can follow the steps from [this section](./sign-and-verify-with-key.md#set-image) to set the image. Let's ensure the `IMAGE` variable is set.
+We can follow the steps from [this section](../cosign/set-image.md) to set the image. Let's ensure the `IMAGE` variable is set.
 
 ```bash
 echo $IMAGE

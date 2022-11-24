@@ -1,6 +1,6 @@
-## Authors
+# Author
 
-Rewanth Tammana is a security ninja, open-source contributor, and full-time freelancer. Previously, Senior Security Architect at Emirates National Bank of Dubai. He is passionate about DevSecOps, Application, and Container Security. He added 17,000+ lines of code to Nmap (famous as the Swiss Army knife of network utilities). Holds industry certifications like CKS (Certified Kubernetes Security Specialist), CKA (Certified Kubernetes Administrator), etc.
+[Rewanth Tammana](https://rewanthtammana.com) is a security ninja, open-source contributor, and full-time freelancer. Previously, Senior Security Architect at Emirates National Bank of Dubai. He is passionate about DevSecOps, Application, and Container Security. He added 17,000+ lines of code to Nmap (famous as the Swiss Army knife of network utilities). Holds industry certifications like CKS (Certified Kubernetes Security Specialist), CKA (Certified Kubernetes Administrator), etc.
 
 Rewanth speaks and delivers training at international security conferences worldwide, including Black Hat, Defcon, Hack In The Box (Dubai and Amsterdam), CRESTCon UK, PHDays, Nullcon, Bsides, CISO Platform, null chapters, and numerous others.
 
