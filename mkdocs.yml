@@ -17,7 +17,7 @@ extra_css:
 extra:
   analytics:
     provider: google
-    # property: UA-198321670-1
+    property: UA-198321670-1
   social:
     - icon: fontawesome/brands/github-alt
       link: https://github.com/rewanthtammana/sigstore-the-easy-way
