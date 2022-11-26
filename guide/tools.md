@@ -1,10 +1,10 @@
 # Tools
 
-Below are the pre-requisite tools we rqeuire throughout this guide.
+Below are the pre-requisite tools we require throughout this guide.
 
-* [cosign](https://github.com/sigstore/cosign)
-* [rekor](https://github.com/sigstore/rekor)
-* [fulico](https://github.com/sigstore/fulcio)
+* [sigstore cosign](https://github.com/sigstore/cosign)
+* [sigstore rekor](https://github.com/sigstore/rekor)
+* [sigstore fulcio](https://github.com/sigstore/fulcio)
 * [syft](https://github.com/anchore/syft)
 * [trivy](https://github.com/aquasecurity/trivy)
 * [crane](https://github.com/google/go-containerregistry/blob/main/cmd/crane/doc/crane.md)
