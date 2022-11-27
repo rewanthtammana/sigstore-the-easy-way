@@ -32,7 +32,7 @@ extra:
 
 theme:
   name: material
-  custom_dir: 'guide/assets/'
+  custom_dir: 'guide/assets/_overrides'
   features:
     - content.code.annotate
     - navigation.indexes
@@ -64,6 +64,9 @@ theme:
   search_index_only: true
 
 plugins:
+  - exclude:
+      glob:
+        - "_overrides/*"
   - git-revision-date-localized:
       type: iso_datetime
       enable_creation_date: true
