@@ -2,7 +2,7 @@ site_name: Sigstore The Easy Way
 site_description: >-
   Software signing just got easier. Sigstore The Easy Way guide is the most straightforward way to geting started with software signing & securing software supply chains.
 site_author: Rewanth Tammana
-site_url: https://rewanthtammana/sigstore-the-easy-way
+site_url: https://rewanthtammana.com/sigstore-the-easy-way
 docs_dir: guide
 edit_uri: edit/main/guide
 
@@ -32,7 +32,7 @@ extra:
 
 theme:
   name: material
-  custom_dir: 'guide/assets/'
+  custom_dir: 'guide/assets/_overrides'
   features:
     - content.code.annotate
     - navigation.indexes
@@ -64,6 +64,9 @@ theme:
   search_index_only: true
 
 plugins:
+  - exclude:
+      glob:
+        - "_overrides/*"
   - git-revision-date-localized:
       type: iso_datetime
       enable_creation_date: true
