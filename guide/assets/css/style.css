@@ -2,3 +2,6 @@
 hr {
     visibility: hidden;
 }
+.custom_block_announcement {
+    text-align: center;
+}
