@@ -62,6 +62,7 @@ theme:
     code: Roboto Mono
   include_search_page: false
   search_index_only: true
+  logo: https://user-images.githubusercontent.com/22347290/203914383-0ac4a963-839a-408b-8069-e50441b90fae.png
 
 plugins:
   - git-revision-date-localized:
