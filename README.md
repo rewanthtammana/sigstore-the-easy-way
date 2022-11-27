@@ -6,6 +6,11 @@ This book aims to be the most straightforward guide to getting started with sigs
 
 ![rewanthtammana-sigstore-the-easy-way](https://user-images.githubusercontent.com/22347290/203914383-0ac4a963-839a-408b-8069-e50441b90fae.png)
 
+## Contributors
+
+<a href = "https://github.com/rewanthtammana/sigstore-the-easy-way/contributors">
+  <img src = "https://contrib.rocks/image?repo=rewanthtammana/sigstore-the-easy-way"/>
+</a>
 
 ## Copyright
 
