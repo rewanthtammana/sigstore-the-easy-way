@@ -51,7 +51,7 @@ cosign verify-attestation --key cosign.pub $IMAGE
 The above command verifies & returns the uploaded artifact data in base64 format. We can decode it to query the artifact (in this case, the SBOM file).
 
 ```bash
-cosign verify-attestation --key cosign.pub $IMAGE | jq -r .payload | base64 -D | jq .
+cosign verify-attestation --key cosign.pub $IMAGE | jq -r .payload | base64 -d | jq .
 ```
 
 ![cosign-verify-attestation-decode-payload](../images/cosign-verify-attestation-decode-payload.png)
